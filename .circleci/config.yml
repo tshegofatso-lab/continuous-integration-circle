@@ -6,4 +6,17 @@ executors:
 jobs:
   build:
     executor: ci-executor
-    steps :
+    steps:
+      - checkout
+
+      - run:
+          name: build dependencies
+          command: bundle install
+
+      - run:
+          name: build the jekyll site
+          command: bundle exec jekyll build
+
+      - run:
+          name: notify build is finished
+          command: echo "The build is finished!"
