@@ -6,4 +6,4 @@ executors:
 jobs:
   build:
     executor: ci-executor
-    steps
+    steps :
